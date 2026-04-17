@@ -2,11 +2,11 @@ class ProductPage {
   constructor(page) {
     this.page = page;
 
-    this.addToCartButton = page.locator('a.btn-success');
+    this.addToCartButton = page.getByRole('link', { name: 'Add to cart' })
   }
 
   async addToCart() {
-    this.page.once('dialog', dialog => dialog.accept());
+    //this.page.once('dialog', dialog => dialog.accept());
     await this.addToCartButton.click();
     await this.page.waitForTimeout(1000);
   }
