@@ -3,7 +3,9 @@ const { expect } = require('@playwright/test');
 
 test.describe('Shopping Cart - Add to Cart', () => {
 
-  test('TC-002: Should add first product to cart and verify it appears', async ({ page, homePage, productPage, cartPage }) => {
+  test('TC-002: Should add first product to cart and verify it appears',
+  { tag: ['@cart'] },
+  async ({ page, homePage, productPage, cartPage }) => {
 
     // Navigate to homepage
     await homePage.goto();

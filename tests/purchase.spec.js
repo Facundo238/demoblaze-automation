@@ -3,7 +3,9 @@ const { expect } = require('@playwright/test');
 
 test.describe('Checkout - Complete Purchase Flow', () => {
 
-  test('TC-003: Should complete a purchase with valid data', async ({ page, homePage, productPage, cartPage }) => {
+  test('TC-003: Should complete a purchase with valid data',
+  { tag: ['@e2e','@purchase'] },
+  async ({ page, homePage, productPage, cartPage }) => {
 
     // ── SETUP: Add product to cart first ──────────────────
     // This test depends on having at least one item in the cart
