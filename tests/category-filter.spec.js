@@ -1,5 +1,6 @@
 const { test } = require('../fixtures');
 const { expect } = require('@playwright/test');
+const { categoryData } = require('../data/categoryData'); 
 
 // NOTE: Category filter automation is not typically prioritized in real projects
 // because it can be difficult to validate correctly — the catalog may change,
@@ -7,39 +8,6 @@ const { expect } = require('@playwright/test');
 // This type of test is recommended only for critical filters with complex business logic.
 // In this case, it was automated to demonstrate data-driven testing
 // with multiple datasets and iteration across different filter scenarios.
-
-const categoryData = [
-  {
-    category: 'Phones',
-    expectedProducts: [
-      'Samsung galaxy s6',
-      'Nokia lumia 1520',
-      'Nexus 6',
-      'Samsung galaxy s7',
-      'Iphone 6 32gb',
-      'Sony xperia z5',
-      'HTC One M9',
-    ]
-  },
-  {
-    category: 'Laptops',
-    expectedProducts: [
-      'Sony vaio i5',
-      'Sony vaio i7',
-      'MacBook air',
-      'Dell i7 8gb',
-      '2017 Dell 15.6 Inch',
-      'MacBook Pro',
-    ]
-  },
-  {
-    category: 'Monitors',
-    expectedProducts: [
-      'Apple monitor 24',
-      'ASUS Full HD',
-    ]
-  },
-];
 
 test.describe('Product Catalog - Category Filter', () => {
 
